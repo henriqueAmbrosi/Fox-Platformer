@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gm = this;
-        gemCounterText.text = gems.ToString("00");
+        gemCounterText.text = gems.ToString("00") + "/" + totalGems.ToString("00");
         scn = SceneManager.GetActiveScene();
         pausePanel.SetActive(false);
         endLevelPanel.SetActive(false);
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     public void AddGem()
     {
         gems++;
-        gemCounterText.text = gems.ToString("00");
+        gemCounterText.text = gems.ToString("00") + "/" + totalGems.ToString("00");
         if(gems >= totalGems)
         {
             PlayerPrefs.SetInt("Level" + (scn.buildIndex + 1).ToString() + "Unlocked", 1);
