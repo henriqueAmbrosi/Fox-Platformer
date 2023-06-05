@@ -79,7 +79,7 @@ public class PlayerScript : MonoBehaviour
             Instantiate(itemFeedback, collision.transform.position, collision.transform.rotation);
         }
 
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
             StartCoroutine(PlayerDeath());
         }
@@ -110,6 +110,12 @@ public class PlayerScript : MonoBehaviour
             jmp = true;
             Destroy(collision.gameObject);
             Instantiate(enemyDeathFeedback, collision.transform.position, collision.transform.rotation);
+            StartCoroutine(spawnGemOnEnemyDeath(collision.transform.position, collision.transform.rotation));
+        }
+
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            jmp = true;
             StartCoroutine(spawnGemOnEnemyDeath(collision.transform.position, collision.transform.rotation));
         }
     }

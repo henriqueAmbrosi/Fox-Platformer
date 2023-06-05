@@ -9,6 +9,9 @@ public class LeverScript : MonoBehaviour
     public GameObject[] doors;
     public Sprite nextStepLever;
     public AudioSource toggleSfx;
+    public bool isSingleUse = false;
+
+    bool disabled = false;
 
 
     SpriteRenderer spr;
@@ -17,6 +20,7 @@ public class LeverScript : MonoBehaviour
 
     void Start()
     {
+
         spr = GetComponent<SpriteRenderer>();
         toggleSfx = GetComponent<AudioSource>();
     }
@@ -24,7 +28,7 @@ public class LeverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInsideTrigger)
+        if (isInsideTrigger && !disabled)
         {
             GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
             // Toggle doors and lever state
@@ -38,6 +42,14 @@ public class LeverScript : MonoBehaviour
                 {
                     doors[i].SetActive(!doors[i].activeSelf);
                 }
+
+                if (isSingleUse)
+                {
+                    if(BossScript.boss)
+                        BossScript.boss.EnableBoss();
+                    disabled = true;
+                    GetComponentsInChildren<SpriteRenderer>()[1].enabled = false;
+                }
             }
         }
         else
@@ -48,7 +60,10 @@ public class LeverScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isInsideTrigger = true;
+        if (!disabled)
+        {
+            isInsideTrigger = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

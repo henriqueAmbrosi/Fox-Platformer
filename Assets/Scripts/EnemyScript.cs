@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject edgeCheck;
 
     RaycastHit2D groundInfo;
-    public float rayDistance = 1;
+    float rayDistance = 1;
 
     // Update is called once per frame
     void Update()
