@@ -8,6 +8,7 @@ public class TemporaryPlatformScript : MonoBehaviour
 {
     public GameObject platform;
     public float startingTime = 2.0f;
+    public float toggleTime = 2.0f;
     public GameObject audios;
     AudioSource audioSrc;
 
@@ -15,7 +16,7 @@ public class TemporaryPlatformScript : MonoBehaviour
     void Start()
     {
         audioSrc = audios.GetComponent<AudioSource>();
-        InvokeRepeating("togglePlatform", startingTime, 2.0f);
+        InvokeRepeating("togglePlatform", startingTime, toggleTime);
     }
 
     void togglePlatform()
