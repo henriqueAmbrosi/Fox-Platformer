@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d3240c946631a4966b1bcab3db999126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   - {fileID: 0}
   nextStepLever: {fileID: 21300000, guid: 441a2d89600064d4d9ced045b19d0ae6, type: 3}
   toggleSfx: {fileID: 2115714907037763906}
+  isSingleUse: 0
 --- !u!82 &2115714907037763906
 AudioSource:
   m_ObjectHideFlags: 0

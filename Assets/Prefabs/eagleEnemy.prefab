@@ -167,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f240dfd4814d34d55a9b033f3c9d8a60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -214,7 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   edgeCheck: {fileID: 4278623910774388628}
-  rayDistance: 1
 --- !u!61 &4278623911380163009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -239,7 +238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1641912, y: 0.32579774}
+  m_Size: {x: 1.5544329, y: 0.32579774}
   m_EdgeRadius: 0
 --- !u!61 &4278623911380163008
 BoxCollider2D:
